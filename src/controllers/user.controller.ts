@@ -15,7 +15,9 @@ export const addHolidaysToCalendar = async (
 
   const PUBLIC_HOLIDAYS_URL = process.env.PUBLIC_HOLIDAYS_URL;
   try {
-    const response = await fetch(`${PUBLIC_HOLIDAYS_URL}${year}${countryCode}`);
+    const response = await fetch(
+      `${PUBLIC_HOLIDAYS_URL}${year}/${countryCode}`
+    );
     const data = (await response.json()) as any[];
     // console.log(data)
 
